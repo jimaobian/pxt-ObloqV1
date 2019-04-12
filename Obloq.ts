@@ -1181,9 +1181,9 @@ namespace Obloq {
      * @param mess set mess, eg: mess
     */
     //% weight=101
-    //% blockId=Obloq_mqtt_send_message
-    //% block="pubLish %mess |to topic_0"
-    export function Obloq_mqtt_send_message(mess: number): void {
+    //% blockId=Obloq_mqtt_send_number
+    //% block="pubLish number %mess |to topic_0"
+    export function Obloq_mqtt_send_number(mess: number): void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_MQTT_INIT) {
             return
