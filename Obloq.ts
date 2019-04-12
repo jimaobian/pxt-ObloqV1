@@ -781,7 +781,7 @@ namespace Obloq {
         }
 
         OBLOQ_WIFI_ICON = 1
-        let timeout = 10000  //Set the default timeout period 10s.
+        let timeout = 15000  //Set the default timeout period 10s.
         timeout = timeout < 100 ? 100 : timeout //Timeout minimum resolution 100ms
 
         let timeout_count_max = timeout / 100
@@ -1023,7 +1023,7 @@ namespace Obloq {
 
         Obloq_connect_mqtt()
 
-        while (_timeout < 1000) {
+        while (_timeout < 3000) {
             if (_timeout % 50 == 0) {
                 Obloq_mqtt_icon_display()
                 iconnum += 1;
@@ -1037,7 +1037,7 @@ namespace Obloq {
             _timeout += 1
 
         }
-        if (_timeout >= 1000 && OBLOQ_ANSWER_CMD != "MqttConneted") {
+        if (_timeout >= 3000 && OBLOQ_ANSWER_CMD != "MqttConneted") {
             return OBLOQ_ERROR_TYPE_IS_MQTT_CONNECT_TIMEOUT
         }
         for (let i = 0; i < OBLOQ_MQTT_TOPIC_NUM_MAX; i++) {
@@ -1173,6 +1173,25 @@ namespace Obloq {
             Obloq_serial_init()
         }
         obloqWriteString("|4|1|3|" + OBLOQ_MQTT_TOPIC[0][0] + "|" + mess + "|\r")
+    }
+
+    /**
+     * Send a message.
+     * @param top set top, eg: top
+     * @param mess set mess, eg: mess
+    */
+    //% weight=101
+    //% blockId=Obloq_mqtt_send_message
+    //% block="pubLish %mess |to topic_0"
+    export function Obloq_mqtt_send_message(mess: number): void {
+        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        if (!OBLOQ_MQTT_INIT) {
+            return
+        }
+        if (!OBLOQ_SERIAL_INIT) {
+            Obloq_serial_init()
+        }
+        obloqWriteString("|4|1|3|" + OBLOQ_MQTT_TOPIC[0][0] + "|" + mess.toString() + "|\r")
     }
 
     /**
