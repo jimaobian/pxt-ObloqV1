@@ -1176,7 +1176,7 @@ namespace Obloq {
     }
 
     /**
-     * Send a message.
+     * Send a number.
      * @param top set top, eg: top
      * @param mess set mess, eg: mess
     */

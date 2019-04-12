@@ -13,5 +13,6 @@ Obloq.Obloq_mqtt_setup(
 )
 basic.forever(() => {
     Obloq.Obloq_mqtt_send_message("hello")
+    Obloq.Obloq_mqtt_send_number(1)
     basic.pause(5000)
 })
