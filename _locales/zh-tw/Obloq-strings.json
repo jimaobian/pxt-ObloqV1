@@ -15,7 +15,7 @@
 	"Obloq.Obloq_mqtt_reconnect|block": "重新連接MQTT",
 	"Obloq.Obloq_mqtt_disconnect|block": "MQTT斷開連接",
     "Obloq.Obloq_mqtt_send_message|block": "發送消息 %mess |至 topic_0",
-    "Obloq.Obloq_mqtt_send_number|block": "發送数字 %mess |至 topic_0",
+    "Obloq.Obloq_mqtt_send_number|block": "發送数字 $mess |至 topic_0",
 	"Obloq.Obloq_mqtt_send_message_more|block": "發送消息 %mess |至 %top",
 	"Obloq.Obloq_mqtt_add_topic|block": "新增訂閱 %top |: %IOT_TOPIC",
 	"Obloq.Obloq_mqtt_callback_user|block": "在 topic_0 收到消息時運行",
