@@ -1183,6 +1183,7 @@ namespace Obloq {
     //% weight=101
     //% blockId=Obloq_mqtt_send_number
     //% block="pubLish number %mess |to topic_0"
+    //% mess.defl=0
     export function Obloq_mqtt_send_number(mess: number): void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_MQTT_INIT) {
