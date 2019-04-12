@@ -1178,11 +1178,11 @@ namespace Obloq {
     /**
      * Send a number.
      * @param top set top, eg: top
-     * @param mess set mess, eg: mess
+     * @param mess set mess, eg: 0
     */
     //% weight=101
     //% blockId=Obloq_mqtt_send_number
-    //% block="pubLish number %0 |to topic_0"
+    //% block="pubLish number %mess |to topic_0"
     export function Obloq_mqtt_send_number(mess: number): void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_MQTT_INIT) {
